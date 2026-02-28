@@ -178,7 +178,15 @@
   }
   .hero-location span { display: block; width: 28px; height: 1px; background: rgba(220,16,22,0.4); }
 
-  .countdown-wrap { margin-top: 52px; animation: fadeUp 1s 0.3s ease both; }
+  .rsvp-simple-deadline {
+    margin-top: 28px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    animation: fadeUp 1s 0.3s ease both;
+  }
   .countdown-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,20,80,0.35); margin-bottom: 16px; }
   .countdown { display: flex; gap: 10px; justify-content: center; align-items: flex-end; }
   .cd-unit { text-align: center; }
@@ -404,7 +412,7 @@
 <nav id="nav">
   <div class="nav-logo">SXM <span>2027</span></div>
   <ul class="nav-links">
-    <li><a href="#welcome">Home</a></li>
+    <li><a href="#welcome">Welcome</a></li>
     <li><a href="#glance">The Island</a></li>
     <li><a href="#activities">Activities</a></li>
     <li><a href="#timeline">Timeline</a></li>
@@ -412,19 +420,7 @@
   </ul>
 </nav>
 
-<!-- ═══ PAGE 1: SPLASH PHOTO ═══ -->
-<section class="splash" id="home">
-  <div class="flag-stripe"></div>
-  <div class="splash-photo-bg"></div>
-  <div class="splash-vignette"></div>
-  <div class="splash-label">
-    <span class="splash-flag">🇸🇽</span>
-    <span class="splash-name">Sint Maarten</span>
-  </div>
-  <div class="scroll-hint splash-scroll"><span>Scroll</span></div>
-</section>
-
-<!-- ═══ PAGE 2: HERO / WELCOME ═══ -->
+<!-- ═══ HERO / WELCOME ═══ -->
 <section class="hero" id="welcome">
   <div class="flag-stripe"></div>
   <div class="hero-map-bg"></div>
@@ -441,25 +437,7 @@
       <span></span>The Netherlands Antilles &nbsp;·&nbsp; 18°02′N 63°03′W &nbsp;·&nbsp; 10 Days<span></span>
     </p>
 
-    <div class="countdown-wrap">
-      <p class="countdown-label">RSVP closes in</p>
-      <div class="countdown">
-        <div class="cd-unit">
-          <span class="cd-number" id="cd-days">--</span>
-          <span class="cd-label">Days</span>
-        </div>
-        <span class="cd-sep">:</span>
-        <div class="cd-unit">
-          <span class="cd-number" id="cd-hours">--</span>
-          <span class="cd-label">Hours</span>
-        </div>
-        <span class="cd-sep">:</span>
-        <div class="cd-unit">
-          <span class="cd-number" id="cd-mins">--</span>
-          <span class="cd-label">Mins</span>
-        </div>
-      </div>
-    </div>
+    <p class="rsvp-simple-deadline">RSVP Deadline: March 31, 2026</p>
 
     <div class="hero-cta">
       <a href="#rsvp" class="btn-primary">Reserve My Spot</a>
@@ -823,22 +801,6 @@
 </footer>
 
 <script>
-// Countdown to April 1, 2026
-function updateCountdown() {
-  const deadline = new Date('2026-04-01T23:59:59');
-  const now = new Date();
-  const diff = deadline - now;
-  if (diff <= 0) {
-    ['cd-days','cd-hours','cd-mins'].forEach(id => document.getElementById(id).textContent = '00');
-    return;
-  }
-  document.getElementById('cd-days').textContent  = String(Math.floor(diff / 86400000)).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0');
-  document.getElementById('cd-mins').textContent  = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
-}
-updateCountdown();
-setInterval(updateCountdown, 30000);
-
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
