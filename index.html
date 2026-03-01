@@ -318,17 +318,17 @@
   /* ══════════════════════════════════════
      RSVP
   ══════════════════════════════════════ */
-  .rsvp { background: #001450; padding: 96px 24px; position: relative; overflow: hidden; }
-  .rsvp::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(220,16,22,0.11) 0%, transparent 60%); }
+  .rsvp { background: var(--white); padding: 96px 24px; position: relative; overflow: hidden; }
+  .rsvp::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(0,38,136,0.04) 0%, transparent 60%); }
   .rsvp .container { position: relative; z-index: 1; }
   .rsvp .section-tag { color: var(--red); }
-  .rsvp .section-title { color: var(--white); }
+  .rsvp .section-title { color: var(--deep); }
   .rsvp .section-title em { color: var(--red); }
 
-  .rsvp-deadline { display: inline-flex; align-items: center; gap: 10px; background: rgba(220,16,22,0.1); border: 1px solid rgba(220,16,22,0.28); border-radius: 4px; padding: 10px 20px; margin: 20px 0 40px; }
-  .rsvp-deadline-text { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: #FF4A50; letter-spacing: 0.08em; }
+  .rsvp-deadline { display: inline-flex; align-items: center; gap: 10px; background: rgba(220,16,22,0.06); border: 1px solid rgba(220,16,22,0.2); border-radius: 4px; padding: 10px 20px; margin: 20px 0 40px; }
+  .rsvp-deadline-text { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--red); letter-spacing: 0.08em; }
 
-  .form-wrap { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 48px; max-width: 680px; }
+  .form-wrap { background: var(--offwhite); border: 1px solid rgba(0,38,136,0.08); border-radius: 12px; padding: 48px; max-width: 680px; }
   .form-row { margin-bottom: 24px; }
   .form-label { display: block; font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
   .form-input, .form-select, .form-textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; padding: 14px 16px; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
@@ -658,7 +658,7 @@
   <div class="container">
     <span class="section-tag">Join the Crew</span>
     <h2 class="section-title">Ready to come<br/><em>home with us?</em></h2>
-    <p style="color:rgba(255,255,255,0.5);font-size:1rem;line-height:1.7;max-width:520px;margin-top:12px;">Fill in the form below to reserve your spot. We'll use your response to finalize the room block and plan the right experiences.</p>
+    <p style="color:rgba(0,20,80,0.55);font-size:1rem;line-height:1.7;max-width:520px;margin-top:12px;">Fill in the form below to reserve your spot. We'll use your response to finalize the room block and plan the right experiences.</p>
 
     <div class="rsvp-deadline">
       <span>⏰</span>
